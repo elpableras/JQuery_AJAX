@@ -1,5 +1,5 @@
 JQuery & AJAX Slider
-
+====================
 
 Actions
 
