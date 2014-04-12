@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<head>
+    <title>Slider JQuery & AJAX</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html;/>
+    <meta http-equiv="language" content="es" />
+    <meta name="robots" content="all" />
+    
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/carrusel.js"></script>
+	<link href="css/ajax_style.css" rel="stylesheet" type="text/css">
+	
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">	
+    
+    <script type="text/javascript">
+		
+        jQuery(document).ready(function() {
+                     
+            $("ul.contenedor").carrusel({
+                width:300,
+                height:300,
+                auto: 3000,
+                fade: 400,
+				next: $('.next'),
+                prev: $('.prev'),
+                pagination: true
+            });
+        });
+		
+		// AJAX Carga de imágenes
+		function loadImg (){			
+			var url = 'http://156.35.98.12/new/img/';
+			$.ajax({ 
+				url : url, 
+				cache: true,
+				processData : false,
+			}).always(function(){			
+				for(var i=0;i<5;i++) {							
+					var img = document.createElement("img"); 
+					// agregamos propiedades al elemento
+					img.src = url+i+".jpg";												
+					img.alt = "imagen"+i																			
+					$("#"+i).append(img);
+				}
+			});   
+		}
+		
+    </script>
+    
+</head>
+<body onload="loadImg()">
+	<h1>JQuery & AJAX Slider</h1>
+	
+	<section>
+		<article id="carrusel">		
+			<div><h2 id="texto">Earth Planet, South America</h2></div>
+			<ul class="contenedor">
+				<li id="0"></li>
+				<li id="1"></li>
+				<li id="2"></li>
+				<li id="3"></li>
+				<li id="4"></li>
+			</ul>
+			
+			<span class="prev"><img src="./img/arrow_left.gif" alt="left"></span>
+			<span class="next"><img src="./img/arrow_right.gif" alt="right"></span>	
+		</article>
+		<article id="acciones">
+			<h2>Acciones</h2>
+				<ul>
+					<li><p>Clicking on an image thumbnail is dynamically loaded into the main container of the gallery and the holder thereof will be updated</p></li>
+					<li><p>The carousel will have navigation on the left and right</p></li>
+					<li><p>The url of the image and text content must be loaded dynamically with AJAX</p></li>
+				</ul>			
+			<h2>Extra</h2>
+				<ul>
+					<li><p>Redial the image you are currently viewing in thumbnail carousel (with some opacity / fade or similar)</p></li>
+					<li><p>Additional keyboard navigation (left and right arrows)</p></li>
+					<li><p>Do cyclic carousel (which never comes to an end by the right or to the left first)</p></li>
+				</ul>		
+		</article>
+	</section>
+	
+	<footer>							
+	   <p><small>Last updated 10/01/2014</small></p>
+	   <p><small>© copyright <a href="mailto:UO173780@uniovi.es">Pablo González Jiménez</a> 2013 MIW-NEW</small></p>
+	</footer>
+	
+</body>
+</html>

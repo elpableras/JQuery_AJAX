@@ -1,0 +1,65 @@
+		
+		body {
+			font-family: 'Rancho', serif;
+			background-image:url('../img/background.jpg'); 
+		}
+		
+		h1 {
+			text-align:center;
+		}
+		
+		.contenedor {
+            margin:0;
+            padding:0;
+            list-style:none;
+            overflow:hidden;
+        }
+        
+        .contenedor li {
+            text-align:left;
+            display:block;
+        }
+        
+        .carrusel-pagination li {
+            display:block;
+            width:99px;
+            height:105px;
+            margin-right:5px;
+            cursor:pointer;
+            float:left;
+            background-image:url('../img/background.jpg'); 
+        }
+        
+        .carrusel-pagination .carrusel-pagination-active {
+            background:#ff0000;
+        }
+		
+		.next, .prev {
+            cursor:pointer;
+        }
+		
+		#carrusel {
+			float:left;
+			width:50%;
+		}
+		
+		#acciones {
+			float:right;
+			width:50%;
+		}
+		
+		/*----- Estilo visual de <footer> --------*/
+		footer {
+			width: 98%;
+			float:left;
+			padding: 1%;
+			color:#000;
+			margin-top: 2em;
+			text-align:center;
+			/*para Firefox*/
+			-moz-border-radius: 15px 15px 15px 15px;
+			/*para Safari y Chrome*/
+			-webkit-border-radius: 15px 15px 15px 15px;
+			/* para Opera */
+			border-radius: 15px 15px 15px 15px;
+		}

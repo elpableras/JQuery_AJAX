@@ -1,0 +1,1 @@
+Para comprobar el funcionamiento del AJAX, se encuentra subida al servidor de clase, dirección: http://156.35.98.12/new/
